@@ -7,7 +7,7 @@ services:
   app:
     container_name: profileapp
     image: profileapp:1.0
-    build: .      # Dockerfile 位置
+    build: .      # Location of Dockerfile
     ports:
       - 3000:3000
     environment:
@@ -30,7 +30,7 @@ services:
   mongo-express:
     container_name: express
     image: mongo-express:1.0-20-alpine3.19
-    restart: always # 修复 MongoNetworkError 错误，确保 mongoDB 启动后再启动 mongo-express
+    restart: always # fixes MongoNetworkError caused by mongodb not being ready when mongo-express starts.
     ports:
       - 8080:8081
     environment:
