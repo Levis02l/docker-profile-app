@@ -18,7 +18,7 @@ services:
     depends_on:
       - mongodb
 
-  mongodb:
+  database:
     container_name: mongoDB
     image: mongo:8.0-rc
     environment:
